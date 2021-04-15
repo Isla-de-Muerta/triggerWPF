@@ -1,0 +1,117 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key = "btnStyle">
+            <Style.Setters>
+                <Setter Property = "Border.Background" Value = "#009cb8"/>
+                <Setter Property= "TextBlock.Foreground" Value="White"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property = "Control.IsMouseOver" Value = "True">
+                    <Setter Property = "Control.Background" Value = "#006a86"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key = "linkStyle">
+            <Style.Triggers>
+                <Trigger Property = "Hyperlink.IsMouseOver" Value = "True">
+                    <Setter Property = "Hyperlink.TextDecorations" Value = ""/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key = "TriggerStyle">
+            <Style.Setters>
+                <Setter Property = "Border.Background" Value = "silver"/>
+                <Setter Property = "TextBlock.FontSize" Value = "25"/>
+                <Setter Property= "TextBlock.Foreground" Value="White"/>
+                <Setter Property = "TextBlock.Padding" Value = "20 12"/>
+                <Setter Property = "TextBlock.Margin" Value = "150 15"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property = "Control.IsMouseOver" Value = "True">
+                    <Setter Property = "Control.Background" Value = "#bedde2"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key = "ellipseStyle">
+            <Style.Setters>
+                <Setter Property = "Ellipse.Fill" Value = "silver"/>
+                <Setter Property = "Ellipse.Width" Value = "100"/>
+                <Setter Property = "Ellipse.Height" Value = "100"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property = "Control.IsMouseOver" Value = "True">
+                    <Setter Property = "Ellipse.Fill" Value = "#3581d5"/>
+                    <Setter Property = "Ellipse.Height" Value = "125"/>
+                    <Setter Property = "Ellipse.Width" Value = "125"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <TabControl>
+        <TabItem Header="1">
+            <StackPanel>
+                <Border Style="{StaticResource btnStyle}">
+                    <TextBlock Text="Download"/>
+                </Border>
+                <Border Style="{StaticResource btnStyle}">
+                    <TextBlock Text="Download"/>
+                </Border>
+                <TextBlock>           
+                    <Hyperlink Style="{StaticResource linkStyle}" NavigateUri="http://www.google.com">
+                        Click here
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock>           
+                    <Hyperlink Style="{StaticResource linkStyle}" NavigateUri="http://www.google.com">
+                        Click here
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="2">
+            <StackPanel>
+                <Label Content="See Other Useful How-to Guides" FontSize="40"/>
+                <StackPanel Orientation="Horizontal">
+                    <Border Style="{StaticResource TriggerStyle}">
+                        <TextBlock Text="Trigger"/>
+                    </Border>
+                    <Border Style="{StaticResource TriggerStyle}">
+                        <TextBlock Text="Trigger"/>
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border Style="{StaticResource TriggerStyle}">
+                        <TextBlock Text="Trigger"/>
+                    </Border>
+                    <Border Style="{StaticResource TriggerStyle}">
+                        <TextBlock Text="Trigger"/>
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border Style="{StaticResource TriggerStyle}">
+                        <TextBlock Text="Trigger"/>
+                    </Border>
+                    <Border Style="{StaticResource TriggerStyle}">
+                        <TextBlock Text="Trigger"/>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="3">
+            <StackPanel>
+                <Canvas>
+                    <Ellipse Style="{StaticResource ellipseStyle}" Canvas.Left="158" Canvas.Top="134"/>
+                    <Ellipse Style="{StaticResource ellipseStyle}" Canvas.Left="504" Canvas.Top="134"/>
+                    <Ellipse Style="{StaticResource ellipseStyle}" Canvas.Left="337" Canvas.Top="134"/>
+                </Canvas>
+            </StackPanel>
+        </TabItem>
+    </TabControl>
+</Window>
